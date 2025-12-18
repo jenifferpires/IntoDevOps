@@ -38,3 +38,8 @@ Desenvolvido por Jeniffer Pires
 💼[Meu LinkedIn](https://www.linkedin.com/in/jeniffer-pires-a5a8678a/)
 
 Este projeto é fruto de estudos baseados em guias práticos de Git e GitHub.
+
+---
+
+## ⏰ Automação (Ambiente Windows)
+Como o ambiente de desenvolvimento atual é Windows, a automação das rotinas de backup foi estruturada para integrar o **Script Bash** com o **Agendador de Tarefas**, utilizando um arquivo `.bat` como gatilho para o ambiente Git Bash.
