@@ -1,47 +1,36 @@
 # 🚀 Into DevOps - Jornada de Aprendizado
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-Este repositório documenta minha evolução técnica em cultura DevOps, focando em automação de infraestrutura, segurança de dados e conteinerização.
+Este repositório foi criado para documentar minha evolução e armazenar projetos práticos sobre cultura DevOps, automação, infraestrutura e ferramentas de desenvolvimento.
 
-## 📌 Evolução do Projeto
-O projeto está organizado em módulos práticos que simulam desafios reais de administração de sistemas:
+## 📌 Sobre o Projeto
+O objetivo principal deste projeto é consolidar conhecimentos em:
+* **Git & GitHub:** Fluxos de trabalho, SSH e versionamento.
+* **Linux/Terminal:** Automação via Bash.
+* **CI/CD:** Pipelines de integração contínua (em breve).
+* **Docker:** Conteinerização de aplicações (em breve).
 
-* **Automação com Bash:** Criação de scripts para monitoramento de recursos do sistema (CPU, Memória e Disco).
-* **Gestão de Logs e Backup:** Rotinas de compactação de dados (`.tar.gz`) com verificações condicionais.
-* **Docker & Containers:** Transformação de scripts locais em micro-serviços isolados e portáteis.
-* **Versionamento Profissional:** Fluxo de trabalho baseado em Git com documentação técnica rigorosa.
+## 🛠️ Tecnologias Utilizadas
+* [Git](https://git-scm.com/) - Sistema de versionamento.
+* [Markdown](https://www.markdownguide.org/) - Escrita de documentação.
+* [Terminal Linux/Git Bash] - Execução de comandos.
 
-## 📁 Estrutura de Pastas
-* `/scripts`: Scripts de monitoramento de sistema (`monitor.sh`).
-* `/logs`: Automação de backups e integração com agendadores de tarefas.
-* `/docker-study`: Receitas de infraestrutura (Dockerfiles) para isolamento de aplicações.
+## 🚀 Como replicar este ambiente
+Para rodar este projeto localmente, você precisará configurar sua chave SSH:
 
-## 🛠️ Tecnologias e Ferramentas
-* **Linux/Bash:** Linguagem principal para automação de tarefas.
-* **Docker:** Conteinerização para garantir que o projeto rode em qualquer ambiente.
-* **Git/GitHub:** Controle de versão e histórico de mudanças.
-* **Ambiente Híbrido:** Estratégias de compatibilidade entre Windows (Host) e Linux (Container/Bash).
+1. **Clone o repositório:**
+   ```bash
+   git clone git@github.com:jenifferpires/into_Devops.git
+Entre na pasta:
 
-## 🐳 Docker: O fim do "Na minha máquina funciona"
-Recentemente, implementei o isolamento do script de monitoramento utilizando Docker. 
-**Aprendizados chave:**
-1.  **Imutabilidade:** Criação de imagens Docker para garantir que o ambiente de execução seja sempre o mesmo.
-2.  **Eficiência:** Uso de camadas (layers) para builds mais rápidos.
-3.  **Portabilidade:** O script agora pode ser executado em qualquer servidor que suporte Docker, sem necessidade de configurar dependências manualmente.
+Bash
 
+cd into_Devops
 
+✍️ Autor
+Desenvolvido por Jeniffer Pires
 
-## ⏰ Automação e Resiliência
-Para garantir a execução das rotinas sem intervenção humana:
-* **No Linux:** Planejado para uso com `cron`.
-* **No Windows:** Implementada ponte via arquivo `.bat` integrado ao **Agendador de Tarefas**, garantindo que o backup de logs ocorra de forma consistente.
+🌐Meu GitHub
 
----
+💼Meu LinkedIn
 
-✍️ **Autor:** Desenvolvido por Jeniffer Pires  
-🌐 [Meu GitHub](https://github.com/jenifferpires) | 
-💼 [Meu LinkedIn](https://www.linkedin.com/in/jeniffer-pires-a5a8678a/)
+Este projeto é fruto de estudos baseados em guias práticos de Git e GitHub.
