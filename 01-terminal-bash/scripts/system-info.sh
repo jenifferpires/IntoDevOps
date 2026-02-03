@@ -1,23 +1,32 @@
-#!/bin/bash
+#!/bin/bash 
 
-# Script para exibir informações básicas do sistema
-# Evolução: adiciona uso de CPU, memória e disco
+# Script para exibir informações do sistema.  
+# Evolução: melhoria visual da saída e organização.  
 
-echo "=== Informações do Sistema ==="
-echo "Usuário atual: $(whoami)"
-echo "Nome do host: $(hostname)"
-echo "Data e hora: $(date)"
+# Cores
+VERDE="\e[32m"
+AZUL="\e[34m"
+AMARELO="\e[33m"
+RESET="\e[0m"
+
+echo -e "${AZUL}========================================${RESET}"
+echo -e "${VERDE}      INFORMAÇÕES DO SISTEMA${RESET}"
+echo -e "${AZUL}========================================${RESET}"
+
+echo -e "${AMARELO}Usuário:${RESET} $(whoami)"
+echo -e "${AMARELO}Host:${RESET} $(hostname)"
+echo -e "${AMARELO}Data/Hora:${RESET} $(date)"
 
 echo ""
-echo "=== Uso de Recursos ==="
-
-echo "CPU (load average):"
+echo -e "${AZUL}--- Uso de CPU (load average) ---${RESET}"
 uptime | awk -F'load average:' '{ print $2 }'
 
 echo ""
-echo "Memória:"
+echo -e "${AZUL}--- Memória ---${RESET}"
 free -h
 
 echo ""
-echo "Disco:"
+echo -e "${AZUL}--- Disco ---${RESET}"
 df -h
+
+echo -e "${AZUL}========================================${RESET}"
