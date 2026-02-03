@@ -54,6 +54,52 @@ Objetivos:
 - Containers e servidores Linux dependem fortemente de scripts.  
 - Dominar o terminal reduz dependência de ferramentas gráficas.  
 
+---
+
+## 📜 Scripts Criados:  
+
+### 🔹 hello.sh
+
+Script introdutório utilizado para apresentar a estrutura básica de um script Bash.
+
+**Conceitos aplicados:**
+- Shebang (`#!/bin/bash`)
+- Comentários no script
+- Uso do comando `echo`
+- Permissão de execução com `chmod`
+
+Este script serve como primeiro contato com automação via terminal.
+
+---
+
+### 🔹 system-info.sh
+
+Script responsável por exibir informações básicas do sistema.
+
+**Informações exibidas:**
+- Usuário em execução
+- Nome do host
+- Data e hora atual
+
+**Conceitos aplicados:**
+- Substituição de comandos (`$( )`)
+- Interação com o sistema operacional
+- Organização e padronização da saída
+
+Este tipo de script é comum em rotinas de diagnóstico, monitoramento e execução de jobs automatizados.
+
+---
+
+## ✅ Resultado do Módulo:  
+
+Ao final deste módulo, foram consolidados os seguintes aprendizados:
+
+- Navegação e execução de comandos no terminal. 
+- Criação e execução de scripts Bash.  
+- Compreensão inicial de automação.  
+- Base necessária para uso futuro em pipelines CI/CD.  
+
+
 🚀 Próximos Passos:  
 
 Nos próximos módulos, estes scripts servirão de base para:
