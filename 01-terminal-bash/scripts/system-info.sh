@@ -1,32 +1,24 @@
-#!/bin/bash 
+#!/bin/bash
 
-# Script para exibir informações do sistema.  
-# Evolução: melhoria visual da saída e organização.  
+LOG_FILE="/tmp/system-info.log"
+DATE=$(date "+%Y-%m-%d %H:%M:%S")
 
-# Cores
-VERDE="\e[32m"
-AZUL="\e[34m"
-AMARELO="\e[33m"
-RESET="\e[0m"
+echo "===============================" >> $LOG_FILE
+echo "📊 System Info - $DATE" >> $LOG_FILE
+echo "Hostname: $(hostname)" >> $LOG_FILE
+echo "Usuário: $(whoami)" >> $LOG_FILE
+echo "-------------------------------" >> $LOG_FILE
 
-echo -e "${AZUL}========================================${RESET}"
-echo -e "${VERDE}      INFORMAÇÕES DO SISTEMA${RESET}"
-echo -e "${AZUL}========================================${RESET}"
+echo "⏱️ Uptime:" >> $LOG_FILE
+uptime -p >> $LOG_FILE
 
-echo -e "${AMARELO}Usuário:${RESET} $(whoami)"
-echo -e "${AMARELO}Host:${RESET} $(hostname)"
-echo -e "${AMARELO}Data/Hora:${RESET} $(date)"
+echo "-------------------------------" >> $LOG_FILE
+echo "🧠 Uso de Memória:" >> $LOG_FILE
+free -h >> $LOG_FILE
 
-echo ""
-echo -e "${AZUL}--- Uso de CPU (load average) ---${RESET}"
-uptime | awk -F'load average:' '{ print $2 }'
+echo "-------------------------------" >> $LOG_FILE
+echo "💽 Uso de Disco:" >> $LOG_FILE
+df -h / >> $LOG_FILE
 
-echo ""
-echo -e "${AZUL}--- Memória ---${RESET}"
-free -h
-
-echo ""
-echo -e "${AZUL}--- Disco ---${RESET}"
-df -h
-
-echo -e "${AZUL}========================================${RESET}"
+echo "===============================" >> $LOG_FILE
+echo "" >> $LOG_FILE

@@ -2,75 +2,52 @@
 
 Este repositório documenta minha **jornada prática de aprendizado em DevOps**, construída de forma incremental e organizada, acompanhando a evolução dos estudos ao longo do curso de formação DevOps.
 
-> ⚠️ **Status do projeto:** em andamento.
+> ⚠️ **Status do projeto:** em andamento
 >
 > Este repositório está sendo continuamente atualizado conforme o avanço no curso. Novos módulos, práticas e automações serão adicionados progressivamente até a conclusão da formação.
 
 ---
 
-## 🎯 Objetivo: 
+## 🧪 Conteúdo prático:  
 
-O objetivo deste projeto é:
+### 📄 `system-info.sh`
 
-* Consolidar conceitos fundamentais de DevOps.  
-* Aplicar a teoria na prática por meio de exercícios reais.  
-* Criar um **portfólio técnico sólido**, com histórico de commits saudável.  
-* Simular cenários comuns do dia a dia de times DevOps.  
+Script de monitoramento básico do sistema operacional, preparado para **execução manual e automatizada**.
 
-Todo o conteúdo aqui foi pensado para ser **didático, rastreável e defensável** em contextos profissionais e entrevistas técnicas.
+O script coleta:
 
----
+* Hostname
+* Uptime do sistema
+* Carga média da CPU
+* Uso de memória
+* Uso de disco
 
-## 🧩 Estrutura do Repositório.  
+Toda a saída é registrada em arquivo de log com **timestamp**, permitindo rastreabilidade e análise histórica.
 
-O repositório está organizado em **módulos independentes**, cada um representando uma etapa da jornada DevOps:
-
-```text
-into_Devops/
-│
-├── 01-terminal-bash/        # Fundamentos de terminal e scripts Bash
-├── 02-git-versionamento/   # Git, versionamento e boas práticas
-├── 03-pipelines-ci-cd/     # Introdução a pipelines e CI/CD
-├── 04-pipeline-multistage/ # Pipeline com múltiplos ambientes
-│
-├── README.md               # Visão geral do projeto
-├── CHANGELOG.md            # Histórico de evolução
+```bash
+/tmp/system-info.log
 ```
 
-Cada módulo possui:
+### ⏰ Automação com cron:  
 
-* README próprio com explicações conceituais
-* Exemplos práticos
-* Evolução incremental por commits
+O script foi integrado ao **cron**, agendador nativo do Linux, simulando uma rotina real de servidor.
 
----
+Exemplo de agendamento:
 
-## 🛠️ Tecnologias e Ferramentas:  
+```bash
+*/5 * * * * /home/jenyf/scripts/system-info.sh
+```
 
-* **Linux / Bash** – Automação de tarefas e scripts
-* **Git & GitHub** – Controle de versão e colaboração
-* **GitHub Actions** – Pipelines CI/CD
-* **YAML** – Definição de workflows
+Esse agendamento executa o script a cada 5 minutos, gravando informações de estado do sistema automaticamente.
 
----
+### 🧠 Aprendizados-chave do módulo:  
 
-## 🔁 Metodologia de Aprendizado:  
+* Diferença entre filesystem Linux e Windows (WSL)
+* Importância de caminhos absolutos em automações
+* Permissões de execução (`chmod +x`)
+* Validação manual antes da automação
+* Logs como parte essencial da automação
 
-* Evolução progressiva (sem pular etapas).  
-* Commits pequenos e semânticos.  
-* Documentação explicando o *porquê*, não apenas o *como*.  
-* Simulação de ambientes reais (dev, qa, homologação, produção).  
-
----
-
-## 🚧 Em Construção:  
-
-Este projeto será expandido com:
-
-* Novos scripts
-* Pipelines mais completas
-* Integrações adicionais
-* Conteúdos avançados conforme o curso evolui
 
 ---
 
