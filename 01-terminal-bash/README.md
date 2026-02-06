@@ -1,109 +1,99 @@
-# Módulo 01 – Introdução ao Terminal e Bash.  
+# 🖥️ Módulo 01 — Terminal, Shell e Automação.  
 
-Este módulo marca o início prático da jornada DevOps, focando no **uso do terminal e na automação básica com Bash**.
+Este módulo aborda os **fundamentos do uso do terminal Linux e Shell Script**, construindo a base necessária para automação de tarefas — um dos pilares da cultura DevOps.
 
-Antes de trabalhar com pipelines, containers ou cloud, é essencial dominar a linha de comando, pois ela é a base de praticamente todas as automações em ambientes Linux.
+Ao longo do módulo, os conceitos são apresentados de forma progressiva e imediatamente aplicados na prática, culminando na **automação real de um script via cron**.
 
 ---
 
 ## 🎯 Objetivos do Módulo:  
 
-- Compreender o que é o terminal e como ele funciona.  
-- Aprender comandos básicos de navegação e manipulação de arquivos.  
-- Introdução ao Bash Script.  
-- Criar scripts simples e executáveis.  
-- Entender permissões de arquivos no Linux.  
+- Compreender o papel do terminal no Linux.  
+- Entender o que é um shell e como o Bash funciona.  
+- Navegar e manipular o sistema de arquivos.  
+- Trabalhar com permissões e execução de scripts.  
+- Utilizar variáveis e ambiente de execução.  
+- Automatizar tarefas com cron (mentalidade DevOps).  
 
 ---
+
+## 📚 Conteúdos Abordados:  
+
+Os conceitos estão organizados no diretório `conceitos/`:
+
+- `01-terminal-e-shell.md` — O que é terminal, shell e Bash  
+- `02-estrutura-diretorios.md` — Sistema de arquivos Linux  
+- `03-permissoes-e-execucao.md` — Permissões e execução de scripts  
+- `04-variaveis-e-ambiente.md` — Variáveis e ambiente de execução  
+- `05-cron-e-automacao.md` — Automação de tarefas com cron  
+
+---
+
+## 🛠️ Prática Desenvolvida.    
+
+### Scripts:    
+
+Localizados em `scripts/`:
+
+- `hello.sh`  
+  Script simples para validação de execução e permissões.
+
+- `system-info.sh`  
+  Script de monitoramento básico que coleta:
+  - Data e hora
+  - Uso de CPU
+  - Uso de memória
+  - Uso de disco
+
+A saída do script é registrada em log para permitir rastreabilidade.
 
 ## 📂 Estrutura do Módulo:  
 
 ```text
 01-terminal-bash/
 ├── README.md
-└── scripts/
-    ├── hello.sh
-    └── system-info.sh
-```
-🧪 Conteúdo Prático: 
+├── scripts/
+│   ├── hello.sh
+│   └── system-info.sh
+└── conceitos/
+    ├── 01-terminal-e-shell.md
+    ├── 02-estrutura-diretorios.md
+    ├── 03-permissoes-e-execucao.md
+    ├── 04-variaveis-e-ambiente.md  
+    └── 5-cron-e-automacao.md  
 
-`hello.sh`
+   ```   
+--- 
 
-Primeiro script Bash do projeto.
+## ⏱️ Automação com Cron:  
 
-Objetivos:
+O script `system-info.sh` foi preparado para execução automática via **cron**, simulando um cenário real de servidor.
 
-- Entender a estrutura básica de um script (`#!/bin/bash`)
-- Executar comandos simples
-- Trabalhar com permissões de execução
+Características da automação:
+- Execução não interativa
+- Uso de caminhos absolutos
+- Geração de logs
+- Validação por múltiplas execuções
 
-`system-info.sh`
-
-Script simples para exibir informações do sistema.
-
-Objetivos:
-
-- Uso de comandos do sistema operacional.  
-- Automação básica.  
-- Introdução à coleta de dados do ambiente.  
-
-🧠 Por que isso é importante em DevOps?
-
-- A automação começa no shell. 
-- Scripts Bash são amplamente usados em pipelines CI/CD.  
-- Containers e servidores Linux dependem fortemente de scripts.  
-- Dominar o terminal reduz dependência de ferramentas gráficas.  
+Este passo marca a transição do uso manual para **automação contínua**, alinhada à mentalidade DevOps.
 
 ---
 
-## 📜 Scripts Criados:  
+## 🧠 Conceitos DevOps Aplicados:  
 
-### 🔹 hello.sh
-
-Script introdutório utilizado para apresentar a estrutura básica de um script Bash.
-
-**Conceitos aplicados:**
-- Shebang (`#!/bin/bash`)
-- Comentários no script
-- Uso do comando `echo`
-- Permissão de execução com `chmod`
-
-Este script serve como primeiro contato com automação via terminal.
+- Automação de tarefas repetitivas.  
+- Previsibilidade de execução.  
+- Rastreabilidade via logs.  
+- Separação entre código e ambiente.  
+- Evolução incremental com versionamento.  
 
 ---
 
-### 🔹 system-info.sh
+## ✅ Status do Módulo:  
 
-Script responsável por exibir informações básicas do sistema.
+✔️ **Concluído**
 
-**Informações exibidas:**
-- Usuário em execução
-- Nome do host
-- Data e hora atual
-
-**Conceitos aplicados:**
-- Substituição de comandos (`$( )`)
-- Interação com o sistema operacional
-- Organização e padronização da saída
-
-Este tipo de script é comum em rotinas de diagnóstico, monitoramento e execução de jobs automatizados.
+Este módulo estabelece a base necessária para os próximos temas da jornada DevOps, como versionamento com Git, pipelines CI/CD e automações mais avançadas.
 
 ---
 
-## ✅ Resultado do Módulo:  
-
-Ao final deste módulo, foram consolidados os seguintes aprendizados:
-
-- Navegação e execução de comandos no terminal. 
-- Criação e execução de scripts Bash.  
-- Compreensão inicial de automação.  
-- Base necessária para uso futuro em pipelines CI/CD.  
-
-
-🚀 Próximos Passos:  
-
-Nos próximos módulos, estes scripts servirão de base para:
-
-- Execução automatizada em pipelines.  
-- Conteinerização com Docker.  
-- Simulação de jobs em ambientes CI/CD.  
