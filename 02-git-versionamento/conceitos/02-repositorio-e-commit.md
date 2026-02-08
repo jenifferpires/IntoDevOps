@@ -1,4 +1,4 @@
-# 📦 02 — Repositório e Commit.  
+# 📦  Repositório e Commit.  
 
 Agora que o modelo mental do Git está claro, vamos entender **como o Git organiza o trabalho no dia a dia**: repositório, áreas de trabalho e commits.
 

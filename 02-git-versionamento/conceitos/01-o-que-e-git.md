@@ -1,4 +1,4 @@
-# 📦 01 — O que é Git?
+# 📦 O que é Git?
 
 Antes de aprender comandos, é essencial entender **o problema que o Git resolve** e **como ele pensa**. Este arquivo constrói o modelo mental necessário para usar Git de forma consciente em ambientes profissionais e DevOps.
 
