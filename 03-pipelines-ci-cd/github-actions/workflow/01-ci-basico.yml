@@ -1,0 +1,19 @@
+name: CI Básico
+
+on:
+push:
+branches:
+- main
+
+jobs:
+ci-basico:
+runs-on: ubuntu-latest
+
+```
+steps:
+  - name: Checkout do repositório
+    uses: actions/checkout@v4
+
+  - name: Executar comando simples
+    run: echo "Pipeline CI básica executando com sucesso!"
+```
