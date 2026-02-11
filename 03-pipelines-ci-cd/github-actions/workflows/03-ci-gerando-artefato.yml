@@ -1,0 +1,28 @@
+name: CI Gerando Artefato
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  gerar-artefato:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Conceder permissão de execução aos scripts
+        run: chmod +x 01-terminal-bash/scripts/*.sh
+
+      - name: Executar script e salvar saída em log
+        run: |
+          mkdir -p logs
+          ./01-terminal-bash/scripts/system-info.sh > logs/system-info.log
+
+      - name: Publicar log como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: system-info-log
+          path: logs/system-info.log
