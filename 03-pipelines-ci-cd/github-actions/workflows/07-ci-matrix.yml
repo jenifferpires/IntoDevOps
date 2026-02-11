@@ -1,0 +1,22 @@
+name: CI com Matrix
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci-matrix:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ambiente: [dev, qa, prod]
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Executar pipeline por ambiente
+        run: |
+          echo "Pipeline executando no ambiente: ${{ matrix.ambiente }}"
