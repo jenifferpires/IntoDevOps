@@ -1,8 +1,8 @@
 # 🚦 Módulo 03 — Pipelines CI/CD.  
 
-Este módulo introduz **pipelines de Integração Contínua (CI) e Entrega Contínua (CD)**, conectando o versionamento com Git à automação de build, testes e validações.
+Este módulo introduz **pipelines de Integração Contínua (CI) e Entrega Contínua (CD)**, conectando o versionamento com Git à automação de build, validações e geração de artefatos.
 
-Aqui, o foco é entender **como o código se transforma em automação**, e não apenas escrever arquivos YAML.
+O foco aqui é **entender o funcionamento dos pipelines**, sua lógica, seus gatilhos e sua evolução progressiva — não apenas escrever arquivos YAML.
 
 ---
 
@@ -10,67 +10,88 @@ Aqui, o foco é entender **como o código se transforma em automação**, e não
 
 Ao concluir este módulo, você será capaz de:
 
-* Entender o que é CI e CD e por que existem.   
-* Relacionar commits e branches com execução automática.   
-* Criar pipelines simples e funcionais.   
-* Ler e diagnosticar falhas de pipeline.   
-* Usar GitHub Actions como ferramenta de automação.  
+- Compreender o papel do CI/CD na cultura DevOps
+- Relacionar commits e branches com execuções automáticas
+- Criar pipelines funcionais e rastreáveis
+- Diagnosticar falhas em pipelines
+- Utilizar GitHub Actions de forma prática e consciente
 
 ---
 
-## 🧠 Conceitos-Chave:  
+## 🧠 Conceitos Trabalhados:  
 
-Neste módulo, os seguintes conceitos serão trabalhados:
+Os conceitos foram introduzidos de forma incremental:
 
-* Integração Contínua (CI)
-* Entrega Contínua (CD)
-* Pipelines como código
-* Eventos de gatilho (push, pull request)
-* Jobs, steps e workflows
+- Integração Contínua (CI)
+- Entrega Contínua (CD)
+- Pipeline como código
+- Eventos e gatilhos (push, branch)
+- Jobs e steps
+- Variáveis de ambiente
+- Execução paralela (matrix)
+- Falhas controladas em pipeline
 
----
-
-## 🛠️ Ferramenta Utilizada:  
-
-* **GitHub Actions**
-
-  * Execução de pipelines baseada em eventos do GitHub.  
-  * Definição de workflows em YAML.  
-  * Integração direta com repositórios Git.  
-
----
-
-## 📁 Estrutura do Módulo:  
+📁 Consulte os arquivos em:
 
 ```text
-03-pipelines-ci-cd/
+03-pipelines-ci-cd/conceitos/
+```
+
+---
+
+## ⚙️ GitHub Actions — Prática Aplicada:  
+
+A prática deste módulo foi construída utilizando **GitHub Actions**, evoluindo passo a passo:
+
+📁 Estrutura:
+
+```text
+03-pipelines-ci-cd/github-actions/
 │
 ├── README.md
 ├── conceitos/
-│   ├── 01-o-que-e-ci-cd.md
-│   ├── 02-pipeline-como-codigo.md
-│   ├── 03-github-actions.md
-│   ├── 04-workflows-e-jobs.md
+│   └── 01-o-que-e-github-actions.md
 │
-└── github-actions/
-    └── ci-basico.yml
+└── workflows/
+    ├── 01-ci-basico.yml
+    ├── 02-ci-com-shell-script.yml
+    ├── 03-ci-gerando-artefato.yml
+    ├── 04-ci-com-variaveis.yml
+    ├── 05-ci-por-branch.yml
+    ├── 06-ci-com-falha.yml
+    └── 07-ci-matrix.yml
 ```
 
-A estrutura será expandida conforme a evolução do curso.
+---
+
+## 🔬 Workflows Implementados:  
+
+| Workflow | Descrição |
+|--------|-----------|
+| CI Básico | Primeira automação acionada por push |
+| CI com Shell Script | Execução de comandos Bash no pipeline |
+| CI com Artefato | Geração e persistência de artefatos |
+| CI com Variáveis | Uso de variáveis de ambiente |
+| CI por Branch | Execução condicionada por branch |
+| CI com Falha | Simulação e leitura de erros |
+| CI com Matrix | Execução paralela por ambiente |
 
 ---
 
 ## 🔁 Conexão com Módulos Anteriores:  
 
-* **Módulo 01**: scripts e automação local
-* **Módulo 02**: Git como gatilho de mudanças
-* **Módulo 03**: automação reprodutível e rastreável
+- **Módulo 01 — Terminal e Bash**: scripts locais e automação
+- **Módulo 02 — Git e Versionamento**: commits e branches como gatilho
+- **Módulo 03 — CI/CD**: automação rastreável e reprodutível
 
-Pipelines são a ponte entre código e produção.
+Pipelines são a ponte entre **código** e **entrega confiável**.
 
 ---
 
 ## 🚧 Status do Módulo:  
 
-🔄 Em andamento
-Este módulo será construído de forma incremental, com commits pequenos e documentação progressiva.
+✅ **Concluído — base sólida de CI/CD**
+
+Este módulo estabelece os fundamentos necessários para avançar para:
+
+➡ **Módulo 04 — Pipeline Multistage (dev / qa / prod)**
