@@ -1,0 +1,34 @@
+name: CI com Controle por Branch
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+
+jobs:
+  validar-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exibir branch atual
+        run: echo "Branch atual: $GITHUB_REF_NAME"
+
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Definir comportamento por branch
+        run: |
+          if [[ "$GITHUB_REF_NAME" == "main" ]]; then
+            echo "Executando pipeline completo (branch main)"
+          else
+            echo "Executando validação simplificada (branch feature)"
+          fi
+
+      - name: Conceder permissão aos scripts
+        if: github.ref_name == 'main'
+        run: chmod +x 01-terminal-bash/scripts/*.sh
+
+      - name: Executar script apenas na main
+        if: github.ref_name == 'main'
+        run: ./01-terminal-bash/scripts/system-info.sh

@@ -1,0 +1,43 @@
+name: CI com Variáveis de Ambiente
+
+on:
+  push:
+    branches:
+      - main
+
+# Variáveis globais do workflow
+env:
+  APP_NAME: into-devops
+  LOG_DIR: logs
+
+jobs:
+  ci-com-env:
+    runs-on: ubuntu-latest
+
+    # Variáveis específicas do job
+    env:
+      STAGE: ci
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Exibir variáveis de ambiente
+        run: |
+          echo "Aplicação: $APP_NAME"
+          echo "Stage: $STAGE"
+          echo "Diretório de logs: $LOG_DIR"
+
+      - name: Conceder permissão de execução aos scripts
+        run: chmod +x 01-terminal-bash/scripts/*.sh
+
+      - name: Executar script usando variáveis
+        run: |
+          mkdir -p $LOG_DIR
+          ./01-terminal-bash/scripts/system-info.sh > $LOG_DIR/system-info-$STAGE.log
+
+      - name: Publicar log como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: system-info-${{ env.STAGE }}
+          path: ${{ env.LOG_DIR }}/system-info-${{ env.STAGE }}.log
