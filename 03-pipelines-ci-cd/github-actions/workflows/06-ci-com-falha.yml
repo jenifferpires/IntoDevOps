@@ -1,0 +1,25 @@
+name: CI com Falha Controlada
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci-falha-controlada:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Simular etapa bem-sucedida
+        run: echo "Etapa inicial executada com sucesso"
+
+      - name: Simular falha proposital
+        run: |
+          echo "Erro proposital: simulando falha de pipeline"
+          exit 1
+
+      - name: Esta etapa não deve executar
+        run: echo "Se você está vendo isso, algo deu errado"
