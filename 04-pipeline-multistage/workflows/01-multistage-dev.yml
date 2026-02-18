@@ -1,0 +1,21 @@
+name: Multistage - Stage DEV
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dev:
+    name: Stage DEV
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Simulando build
+        run: echo "Executando build no ambiente DEV"
+
+      - name: Simulando validação inicial
+        run: echo "Validação básica concluída com sucesso"
