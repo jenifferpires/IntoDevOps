@@ -1,9 +1,9 @@
 name: Multistage - Stage DEV
 
 on:
-  push:
-    branches:
-      - main
+  push:  
+    branches:    
+      - main      
 
 jobs:
   dev:
