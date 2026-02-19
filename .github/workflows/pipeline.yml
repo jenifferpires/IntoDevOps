@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  bash-scripts:
+    name: Bash - lint & run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate bash syntax (bash -n)
+        run: |
+          bash -n 01-terminal-bash/scripts/hello.sh
+          bash -n 01-terminal-bash/scripts/system-info.sh
+
+      - name: Run scripts
+        run: |
+          chmod +x 01-terminal-bash/scripts/hello.sh 01-terminal-bash/scripts/system-info.sh
+          ./01-terminal-bash/scripts/hello.sh
+          ./01-terminal-bash/scripts/system-info.sh
+
+      - name: ShellCheck (informativo)
+        uses: ludeeus/action-shellcheck@v2
+        continue-on-error: true
+        with:
+          scandir: "01-terminal-bash/scripts"
