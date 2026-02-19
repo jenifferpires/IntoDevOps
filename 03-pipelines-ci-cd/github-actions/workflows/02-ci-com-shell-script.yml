@@ -1,8 +1,8 @@
 name: CI com Shell Script
 
 on:
-  push:
-    branches:
+  push:  
+    branches:    
       - main
 
 jobs:

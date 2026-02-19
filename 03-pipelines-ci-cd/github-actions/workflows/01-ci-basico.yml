@@ -1,9 +1,9 @@
 name: CI Básico
 
 on:
-push:
-branches:
-- main
+push:  
+branches:    
+- main      
 
 jobs:
 ci-basico:
@@ -16,4 +16,3 @@ steps:
 
   - name: Executar comando simples
     run: echo "Pipeline CI básica executando com sucesso!"
-```
