@@ -30,7 +30,7 @@ jobs:
           ./01-terminal-bash/scripts/system-info.sh
 
       - name: ShellCheck (informativo)
-        uses: ludeeus/action-shellcheck@v2
+        uses: ludeeus/action-shellcheck@master
         continue-on-error: true
         with:
           scandir: "01-terminal-bash/scripts"
